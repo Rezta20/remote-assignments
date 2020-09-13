@@ -121,6 +121,13 @@ h3 {
 
 /* RWD @media */
 
+@media only screen and (max-width: 400px){
+    .welcome{
+        text-align: center;
+        align-items: center;
+    }
+
+}
 
 @media only screen and (max-width: 500px){
     .wrapper {
