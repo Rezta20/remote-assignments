@@ -14,23 +14,25 @@ document.getElementById('changeTitle').addEventListener('click', changeWelcomeWo
 
 // When navbar was clicked the img will change to a cross
 //setattribute
-const navbarImg = document.getElementById('controlNavbar');
+const navbarImg = document.getElementsByClassName('controlNavbar');
 navbarImg.addEventListener('click', changeToCross);
  
 function changeToCross(){
-    if(navbarImg.classList.contains('controlNavbar')){
+    if(navbarImg.classList.contain('controlNavbar')){
         navbarImg.classList.add('fa-times');
         navbarImg.classList.remove('fa-bars');
+        navbarImg.classList.remove('navbar');
     }
     else{
         navbarImg.classList.remove('fa-times');
         navbarImg.classList.add('fa-bars');
+        navbarImg.classList.add('navbar');
     }
 
 }
 
 //navbar fas fa-bars fa-2x
-{/* <i class="fas fa-times"></i> */}
+//{* <i class="fas fa-times"></i> */}
 
 // When clicked the call to action, the under content boxes will show up.
 
