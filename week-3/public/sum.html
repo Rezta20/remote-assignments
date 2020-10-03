@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sum</title>
+</head>
+<body> 
+    <h1>Enter something</h1>
+    <form action="/getData" method='get'>
+        <input class='userInput' type="text" name='number'>
+        <button class='getData' type='button'> Submit</button>
+    </form>
+
+    result:
+    <span class='Uresult'></span>
+
+<script >
+    // response:55
+     fetch('/getData?number=10').then((res) =>{
+        res.text().then((t)=>(document.querySelector('.Uresult').innerHTML=t));
+     });
+     //response:1275
+    // fetch('/getData?number=50'.then((res) =>{
+    //   res.text().then((t)=>(document.querySelector('.Uresult').innerHTML = t));
+    //});
+
+      document.querySelector('.getData').addEventListener('click', function (e){
+         let num = parseInt(document.querySelector('.userInput').value;
+          fetch(`/getData?number=${num}`).then(function (res){
+              res.text().then(function(t) {
+                  document.querySelector('.Uresult').innerHTML= t;
+                 });
+          });
+      });
+
+</script>
+</body>
+</html>
