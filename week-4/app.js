@@ -1,48 +1,73 @@
-// change welcome to hava a good time! and swich back to welcome message
-// document.getElementById('changeTitle').addEventListener('click', changeWelcomeWords);
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './style.css';
 
-//  function changeWelcomeWords(){
-//      const welcomeWords = document.getElementById('changeTitle').innerHTML;
-
-//      if( welcomeWords == 'Welcome Message'){
-//         document.getElementById('changeTitle').innerHTML= 'Have a Good Time!';
-//      }
-//      else{
-//         document.getElementById('changeTitle').innerHTML= 'Welcome Message';   
-//      }
-//     }
-
-// When navbar was clicked the img will change to a cross
-//setattribute
-const navbarImg = document.getElementsByClassName('controlNavbar');
-navbarImg.addEventListener('click', changeToCross);
- 
-function changeToCross(){
-    if(navbarImg.classList.contain('controlNavbar')){
-        navbarImg.classList.add('fa-times');
-        navbarImg.classList.remove('fa-bars');
-        navbarImg.classList.remove('navbar');
-    }
-    else{
-        navbarImg.classList.remove('fa-times');
-        navbarImg.classList.add('fa-bars');
-        navbarImg.classList.add('navbar');
-    }
-
+class Top extends Component {
+  render() {
+    return (
+      <div className='wrapper'>
+      <div className="logo"> Website Title/ Logo</div>
+      <input type="checkbox" className="navbarToggle hello" id="navbarToggle">
+      <label for="navbarToggle" className="navbarLabel">
+          <i onclick='changeToCross()' className="navbar fas fa-bars fa-2x controlNavbar" 
+          id="navbarToggle">
+          </i>
+          <i class="fas fa-times fa-2x cross"></i>
+      </label>
+      <nav className="itemWrapper">
+          <ul>
+              <a href="#item1" className="item">
+                  <li> item 1</li>
+              </a>
+              <a href="#item2" className="item">
+                  <li> item 2</li>
+              </a>
+              <a href="#item3" className="item">
+                  <li> item 3</li>
+              </a>
+              <a href="#item4" className="item">
+                  <li> item 4</li>
+              </a>
+          </ul>
+      </nav>
+   </div>
+    )
+  }
 }
 
-//navbar fas fa-bars fa-2x
-//{* <i class="fas fa-times"></i> */}
+ReactDOM.render(<Top />, document.getElementById('top'))
 
-// When clicked the call to action, the under content boxes will show up.
-
-function expandWrapper(){
-    const wrapperBorn = document.getElementById('wrapperBorn');
-    if(wrapperBorn.style.display ==='flex'){
-        wrapperBorn.style.display = 'none';
-    }
-    else{
-        wrapperBorn.style.display = 'flex';
-        wrapperBorn.style.backgroundColor = '#ffffdd';
-    }
+class Welcome extends Component {
+  render() {
+    return (
+      <h1 id='changeTitle' className='welcomeMessage'></h1>
+    )
+  }
 }
+
+ReactDOM.render(<Welcome />, document.getElementById('top'))
+
+class Including extends Component {
+  render() {
+    return (
+      <h3> Section Title</h3>
+        <div class="wrapper">
+            <div className="box"> Content Box 1</div>
+            <div className="box"> Content Box 2</div>
+            <div className="box"> Content Box 3</div>
+            <div className="box"> Content Box 4</div>
+        </div>
+        <div className="callWrapper">
+            <button className="call controlBtn" onclick='expandWrapper()'> Call to Action</button>
+        </div>
+        <div className="wrapper wrapper2" id='wrapperBorn'>
+            <div className="box"> Content Box 1</div>
+            <div className="box"> Content Box 2</div>
+            <div className="box"> Content Box 3</div>
+            <div className="box"> Content Box 4</div>
+        </div>
+    )
+  }
+}
+
+ReactDOM.render(<Including />, document.getElementById('including'))
