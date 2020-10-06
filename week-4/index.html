@@ -1,98 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Evil React</title>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontawesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- css  -->
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Layout</title>
+
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    
-    <!-- Don't use this in production: -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  </head>
-  <body>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+
+<body>
     <div id="root"></div>
     <script type="text/babel">
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './style.css';
-
-class Top extends Component {
-  render() {
-    return (
-      <div className='wrapper'>
-      <div className="logo"> Website Title/ Logo</div>
-      <input type="checkbox" className="navbarToggle hello" id="navbarToggle">
-      <label for="navbarToggle" className="navbarLabel">
-          <i onclick='changeToCross()' className="navbar fas fa-bars fa-2x controlNavbar" 
-          id="navbarToggle">
-          </i>
-          <i class="fas fa-times fa-2x cross"></i>
-      </label>
-      <nav className="itemWrapper">
-          <ul>
-              <a href="#item1" className="item">
-                  <li> item 1</li>
-              </a>
-              <a href="#item2" className="item">
-                  <li> item 2</li>
-              </a>
-              <a href="#item3" className="item">
-                  <li> item 3</li>
-              </a>
-              <a href="#item4" className="item">
-                  <li> item 4</li>
-              </a>
-          </ul>
-      </nav>
-   </div>
-    )
-  }
-}
-
-ReactDOM.render(<Top />, document.getElementById('root'))
-
-class Welcome extends Component {
-  render() {
-    return (
-      <h1 id='changeTitle' className='welcomeMessage'></h1>
-    )
-  }
-}
-
-ReactDOM.render(<Welcome />, document.getElementById('root'))
-
-class Including extends Component {
-  render() {
-    return (
-      <h3> Section Title</h3>
-        <div class="wrapper">
-            <div className="box"> Content Box 1</div>
-            <div className="box"> Content Box 2</div>
-            <div className="box"> Content Box 3</div>
-            <div className="box"> Content Box 4</div>
-        </div>
-        <div className="callWrapper">
-            <button className="call controlBtn" onclick='expandWrapper()'> Call to Action</button>
-        </div>
-        <div className="wrapper wrapper2" id='wrapperBorn'>
-            <div className="box"> Content Box 1</div>
-            <div className="box"> Content Box 2</div>
-            <div className="box"> Content Box 3</div>
-            <div className="box"> Content Box 4</div>
-        </div>
-    )
-  }
-}
-
-
-ReactDOM.render(<Including />, document.getElementById('root'))
-
-      ReactDOM.render(
-        <h1>Hello, world!</h1>,
-        document.getElementById('root')
-      );
-
     </script>
-  </body>
+   
+<script src="app.js"></script>
+</body>
+
 </html>
